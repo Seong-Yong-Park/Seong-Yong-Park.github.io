@@ -1,0 +1,77 @@
+---
+layout: default
+title: Blog
+---
+
+<div class="blog-container">
+    <div class="blog-header">
+        <h1 class="blog-title">Blog</h1>
+        <p class="blog-description">카테고리별로 정리된 글들을 확인하세요.</p>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="category-filter">
+        <button class="filter-btn active" data-category="all">All</button>
+        {% assign categories = site.posts | map: 'categories' | flatten | uniq | sort %}
+        {% for category in categories %}
+        <button class="filter-btn" data-category="{{ category }}">{{ category }}</button>
+        {% endfor %}
+    </div>
+
+    <!-- Posts List -->
+    <div class="posts-list">
+        {% for post in site.posts %}
+        <article class="post-item" data-categories="{{ post.categories | join: ' ' }}">
+            <div class="post-item-header">
+                <span class="post-category">{{ post.categories | first | default: 'Uncategorized' }}</span>
+                <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+                    {{ post.date | date: '%Y.%m.%d' }}
+                </time>
+            </div>
+            <h2 class="post-item-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            <p class="post-item-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            <a href="{{ post.url | relative_url }}" class="post-item-link">Read more →</a>
+        </article>
+        {% endfor %}
+    </div>
+
+    {% if site.posts.size == 0 %}
+    <div class="empty-state">
+        <p>아직 작성된 글이 없습니다.</p>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const postItems = document.querySelectorAll('.post-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter posts
+            postItems.forEach(item => {
+                if (category === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    const categories = item.getAttribute('data-categories');
+                    if (categories && categories.includes(category)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        });
+    });
+});
+</script>
+

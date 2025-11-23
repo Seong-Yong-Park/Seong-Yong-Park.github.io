@@ -1,0 +1,35 @@
+<header class="site-header">
+    <div class="header-container">
+        <a href="{{ '/' | relative_url }}" class="site-logo">{{ site.title }}</a>
+        <nav class="site-nav">
+            {% for item in site.navigation %}
+            <a href="{{ item.url | relative_url }}" class="nav-link">{{ item.title }}</a>
+            {% endfor %}
+        </nav>
+        <button class="mobile-menu-toggle" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <nav class="mobile-nav">
+        {% for item in site.navigation %}
+        <a href="{{ item.url | relative_url }}" class="mobile-nav-link">{{ item.title }}</a>
+        {% endfor %}
+    </nav>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    
+    if (toggle && mobileNav) {
+        toggle.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+            toggle.classList.toggle('active');
+        });
+    }
+});
+</script>
+

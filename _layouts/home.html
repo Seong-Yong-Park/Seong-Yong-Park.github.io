@@ -1,0 +1,106 @@
+---
+layout: default
+---
+
+<div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">{{ site.title }}</h1>
+            <p class="hero-subtitle">{{ site.description }}</p>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            
+            <!-- About -->
+            <div class="resume-block">
+                <h3 class="resume-block-title">About</h3>
+                <p class="resume-text">
+                    안녕하세요. 개발자입니다. 여기에 자기소개를 작성해주세요.
+                </p>
+            </div>
+
+            <!-- Experience -->
+            <div class="resume-block">
+                <h3 class="resume-block-title">Experience</h3>
+                <div class="resume-item">
+                    <div class="resume-item-header">
+                        <h4 class="resume-item-title">직책 / 회사명</h4>
+                        <span class="resume-item-date">2020.01 - 현재</span>
+                    </div>
+                    <p class="resume-item-description">주요 업무 및 성과를 작성해주세요.</p>
+                </div>
+                <!-- 추가 경력 항목을 여기에 추가하세요 -->
+            </div>
+
+            <!-- Skills -->
+            <div class="resume-block">
+                <h3 class="resume-block-title">Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4 class="skill-category-title">Frontend</h4>
+                        <ul class="skill-list">
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>HTML/CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4 class="skill-category-title">Backend</h4>
+                        <ul class="skill-list">
+                            <li>Node.js</li>
+                            <li>Python</li>
+                            <li>Database</li>
+                        </ul>
+                    </div>
+                    <!-- 추가 기술 카테고리를 여기에 추가하세요 -->
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="resume-block">
+                <h3 class="resume-block-title">Projects</h3>
+                <div class="project-item">
+                    <h4 class="project-title">프로젝트 이름</h4>
+                    <p class="project-description">프로젝트 설명을 작성해주세요.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">GitHub</a>
+                        <a href="#" class="project-link">Demo</a>
+                    </div>
+                </div>
+                <!-- 추가 프로젝트를 여기에 추가하세요 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Posts Section -->
+    <section class="recent-posts-section">
+        <div class="container">
+            <h2 class="section-title">Recent Posts</h2>
+            <div class="posts-grid">
+                {% for post in site.posts limit: 6 %}
+                <article class="post-card">
+                    <div class="post-card-header">
+                        <span class="post-category">{{ post.categories | first | default: 'Uncategorized' }}</span>
+                        <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+                            {{ post.date | date: '%Y.%m.%d' }}
+                        </time>
+                    </div>
+                    <h3 class="post-card-title">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </h3>
+                    <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+                </article>
+                {% endfor %}
+            </div>
+            <div class="section-footer">
+                <a href="{{ '/blog' | relative_url }}" class="btn-primary">View All Posts</a>
+            </div>
+        </div>
+    </section>
+</div>
+

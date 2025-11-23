@@ -1,0 +1,45 @@
+# Site Settings
+title: Seong-Yong Park
+description: Personal Portfolio & Blog
+author: Seong-Yong Park
+email: your.email@example.com
+url: https://Seong-Yong-Park.github.io
+baseurl: ""
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Theme Settings
+theme: null
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Blog
+    url: /blog
+  - title: Resume
+    url: /#resume
+
+# Social Links (optional)
+social:
+  github: Seong-Yong-Park
+  # linkedin: your-linkedin
+  # twitter: your-twitter
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
