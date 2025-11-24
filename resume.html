@@ -15,11 +15,16 @@ title: Resume
         </button>
     </div>
 
-    <!-- Resume Header (Centered) -->
+    <!-- Resume Header -->
     <div class="resume-header-centered">
         <h1 class="resume-name">Seong Yong Park</h1>
         <p class="resume-job-title" data-i18n="resume.job_title">{{ site.data.translations[site.lang].resume.job_title }}</p>
         <div class="resume-contact-info">
+            {% if site.contact.location %}
+            <span class="resume-contact-item" data-i18n-location="common.location">
+                {{ site.data.translations[site.lang].common.location }}
+            </span>
+            {% endif %}
             {% if site.contact.email %}
             <span class="resume-contact-item">
                 <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
@@ -40,13 +45,11 @@ title: Resume
         </div>
     </div>
 
-    <!-- Divider Line -->
-    <div class="resume-divider"></div>
-
     <div class="resume-content">
         <!-- Experience -->
         <section class="resume-section">
             <h2 class="resume-section-title" data-i18n="resume.experience">{{ site.data.translations[site.lang].resume.experience }}</h2>
+            <div class="resume-section-divider"></div>
             <div class="resume-block">
                 <!-- First Experience - Continental -->
                 <div class="resume-item">
@@ -82,6 +85,7 @@ title: Resume
         <!-- Education -->
         <section class="resume-section">
             <h2 class="resume-section-title" data-i18n="resume.education">{{ site.data.translations[site.lang].resume.education }}</h2>
+            <div class="resume-section-divider"></div>
             <div class="resume-block">
                 <!-- First Education -->
                 <div class="resume-item">
@@ -108,6 +112,7 @@ title: Resume
         <!-- Skills -->
         <section class="resume-section">
             <h2 class="resume-section-title" data-i18n="resume.skills">{{ site.data.translations[site.lang].resume.skills }}</h2>
+            <div class="resume-section-divider"></div>
             <div class="resume-block">
                 <div class="skills-list-compact">
                     <div class="skills-row">
@@ -125,53 +130,13 @@ title: Resume
         <!-- Other -->
         <section class="resume-section">
             <h2 class="resume-section-title" data-i18n="resume.other">{{ site.data.translations[site.lang].resume.other }}</h2>
+            <div class="resume-section-divider"></div>
             <div class="resume-block">
-                <!-- Certifications & Courses -->
+                <!-- Certifications -->
                 <div class="resume-item">
-                    <h3 class="resume-item-title" data-i18n="resume.certifications_courses">{{ site.data.translations[site.lang].resume.certifications_courses }}</h3>
-                    <ul class="resume-item-list">
-                        <li>
-                            <strong data-i18n="resume.cert1_title">{{ site.data.translations[site.lang].resume.cert1_title }}</strong>
-                            <span data-i18n="resume.cert1_org"> • {{ site.data.translations[site.lang].resume.cert1_org }}</span>
-                            <span data-i18n="resume.cert1_date"> • {{ site.data.translations[site.lang].resume.cert1_date }}</span>
-                        </li>
-                        <li>
-                            <strong data-i18n="resume.cert2_title">{{ site.data.translations[site.lang].resume.cert2_title }}</strong>
-                            <span data-i18n="resume.cert2_org"> • {{ site.data.translations[site.lang].resume.cert2_org }}</span>
-                            <span data-i18n="resume.cert2_date"> • {{ site.data.translations[site.lang].resume.cert2_date }}</span>
-                        </li>
-                        <li>
-                            <strong data-i18n="resume.cert3_title">{{ site.data.translations[site.lang].resume.cert3_title }}</strong>
-                            <span data-i18n="resume.cert3_org"> • {{ site.data.translations[site.lang].resume.cert3_org }}</span>
-                            <span data-i18n="resume.cert3_date"> • {{ site.data.translations[site.lang].resume.cert3_date }}</span>
-                        </li>
-                        <li>
-                            <strong data-i18n="resume.cert4_title">{{ site.data.translations[site.lang].resume.cert4_title }}</strong>
-                            <span data-i18n="resume.cert4_org"> • {{ site.data.translations[site.lang].resume.cert4_org }}</span>
-                            <span data-i18n="resume.cert4_date"> • {{ site.data.translations[site.lang].resume.cert4_date }}</span>
-                        </li>
-                        <li>
-                            <strong data-i18n="resume.cert5_title">{{ site.data.translations[site.lang].resume.cert5_title }}</strong>
-                            <span data-i18n="resume.cert5_org"> • {{ site.data.translations[site.lang].resume.cert5_org }}</span>
-                            <span data-i18n="resume.cert5_date"> • {{ site.data.translations[site.lang].resume.cert5_date }}</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Languages -->
-                <div class="resume-item">
-                    <h3 class="resume-item-title" data-i18n="resume.test_scores">{{ site.data.translations[site.lang].resume.test_scores }}</h3>
-                    <ul class="resume-item-list">
-                        <li>
-                            <strong data-i18n="resume.opic_title">{{ site.data.translations[site.lang].resume.opic_title }}</strong>
-                            <span data-i18n="resume.opic_score"> • {{ site.data.translations[site.lang].resume.opic_score }}</span>
-                            <span data-i18n="resume.opic_date"> • {{ site.data.translations[site.lang].resume.opic_date }}</span>
-                        </li>
-                        <li>
-                            <strong data-i18n="resume.hsk_title">{{ site.data.translations[site.lang].resume.hsk_title }}</strong>
-                            <span data-i18n="resume.hsk_score"> • {{ site.data.translations[site.lang].resume.hsk_score }}</span>
-                            <span data-i18n="resume.hsk_date"> • {{ site.data.translations[site.lang].resume.hsk_date }}</span>
-                        </li>
-                    </ul>
+                    <p class="resume-item-description">
+                        <strong>Certifications:</strong> <span data-i18n="resume.certifications_text">{{ site.data.translations[site.lang].resume.certifications_text }}</span>
+                    </p>
                 </div>
             </div>
         </section>

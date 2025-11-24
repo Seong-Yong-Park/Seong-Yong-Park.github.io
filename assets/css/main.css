@@ -527,12 +527,12 @@ a:hover {
 }
 
 .resume-header-centered {
-    text-align: center;
+    text-align: left;
     margin-bottom: var(--spacing-xs);
 }
 
 .resume-name {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
     font-weight: 400;
     margin: 0 0 var(--spacing-xs) 0;
     color: var(--color-black);
@@ -544,14 +544,15 @@ a:hover {
     color: var(--color-medium-gray);
     margin: 0 0 var(--spacing-xs) 0;
     font-weight: 400;
+    text-align: left;
 }
 
 .resume-contact-info {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    gap: var(--spacing-sm);
+    gap: 0;
     font-size: var(--font-size-sm);
 }
 
@@ -569,13 +570,22 @@ a:hover {
     text-decoration: underline;
 }
 
-.resume-contact-item:not(:last-child)::after {
+.resume-contact-item::before {
     content: '•';
-    margin-left: var(--spacing-sm);
+    margin-left: 1.5rem;
+    margin-right: 0.25rem;
     color: var(--color-medium-gray);
 }
 
+.resume-contact-item:first-child::before {
+    margin-left: 0;
+}
+
 .resume-divider {
+    display: none;
+}
+
+.resume-section-divider {
     border-top: 1px solid var(--color-gray);
     margin: var(--spacing-xs) 0 var(--spacing-sm) 0;
     width: 100%;
@@ -611,7 +621,7 @@ a:hover {
 
 .resume-section-title {
     font-size: var(--font-size-base);
-    margin-bottom: 4px;
+    margin-bottom: 0;
     color: var(--color-black);
     font-weight: 550;
     text-transform: uppercase;

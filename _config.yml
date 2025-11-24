@@ -33,6 +33,7 @@ default_lang: ko
 
 # Contact Information
 contact:
+  location: "성남, 대한민국"
   email: park50260@gmail.com
   phone: "+82-10-2661-5026"
   linkedin: "www.linkedin.com/in/성용-박-88769a329"

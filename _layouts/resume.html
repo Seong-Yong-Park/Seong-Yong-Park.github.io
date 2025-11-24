@@ -51,6 +51,15 @@
                     }
                 });
                 
+                // 거주지 업데이트 (언어에 따라 location 또는 location_en 사용)
+                document.querySelectorAll('[data-i18n-location]').forEach(element => {
+                    const locationKey = lang === 'en' ? 'location_en' : 'location';
+                    const value = translations[lang] && translations[lang].common && translations[lang].common[locationKey];
+                    if (value) {
+                        element.textContent = value;
+                    }
+                });
+                
                 // 활성 언어 버튼 업데이트
                 document.querySelectorAll('.lang-btn').forEach(btn => {
                     if (btn.getAttribute('data-lang') === lang) {
