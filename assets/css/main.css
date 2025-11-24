@@ -714,7 +714,7 @@ a:hover {
 
 .resume-item-description {
     color: var(--color-medium-gray);
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     margin-bottom: 4px;
 }
 
@@ -722,7 +722,7 @@ a:hover {
     margin-top: 4px;
     padding-left: var(--spacing-md);
     color: var(--color-medium-gray);
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
 }
 
 .resume-item-list li {

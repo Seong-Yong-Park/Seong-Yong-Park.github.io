@@ -218,7 +218,7 @@ function exportToPDF() {
                 display: flex !important;
                 flex-direction: row !important;
                 flex-wrap: nowrap !important;
-                justify-content: center !important;
+                justify-content: flex-start !important;
                 gap: 0.5rem !important;
             }
             .resume-contact-item::after {
@@ -250,6 +250,26 @@ function exportToPDF() {
             .resume-job-title {
                 font-size: 1.125rem !important;
             }
+            .resume-item-title {
+                color: #212121 !important;
+                font-weight: 700 !important;
+            }
+            .resume-item-description {
+                color: #666666 !important;
+                font-size: 0.875rem !important;
+            }
+            .resume-item-list {
+                font-size: 0.875rem !important;
+            }
+            .resume-item-list li {
+                font-size: 0.875rem !important;
+            }
+            .resume-item-date {
+                color: #666666 !important;
+                font-size: 0.875rem !important;
+            }
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
         }
     `;
     
