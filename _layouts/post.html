@@ -1,8 +1,21 @@
 ---
-layout: default
+layout: blog
 ---
 
 <article class="post-container">
+    <!-- Resume Navigation - 창의적인 연결 -->
+    <div class="resume-navigation-section">
+        <div class="resume-navigation-wrapper">
+            <div class="language-switcher blog-lang-switcher">
+                <button class="lang-btn" data-lang="ko" aria-label="한국어">한</button>
+                <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+            </div>
+            <a href="{{ '/' | relative_url }}" class="resume-navigation-link">
+                ← <span data-i18n="blog.back_to_resume">{{ site.data.translations[site.lang].blog.back_to_resume }}</span>
+            </a>
+        </div>
+    </div>
+
     <div class="post-header">
         <div class="post-meta">
             <span class="post-category">{{ page.categories | first | default: 'Uncategorized' }}</span>
@@ -24,18 +37,17 @@ layout: default
         <div class="post-navigation">
             {% if page.previous %}
             <a href="{{ page.previous.url | relative_url }}" class="post-nav-link post-nav-prev">
-                <span class="post-nav-label">이전 글</span>
+                <span class="post-nav-label" data-i18n="blog.prev_post">이전 글</span>
                 <span class="post-nav-title">{{ page.previous.title }}</span>
             </a>
             {% endif %}
             {% if page.next %}
             <a href="{{ page.next.url | relative_url }}" class="post-nav-link post-nav-next">
-                <span class="post-nav-label">다음 글</span>
+                <span class="post-nav-label" data-i18n="blog.next_post">다음 글</span>
                 <span class="post-nav-title">{{ page.next.title }}</span>
             </a>
             {% endif %}
         </div>
-        <a href="{{ '/blog' | relative_url }}" class="btn-secondary">목록으로</a>
+        <a href="{{ '/blog' | relative_url }}" class="btn-secondary" data-i18n="blog.back_to_list">목록으로</a>
     </div>
 </article>
-

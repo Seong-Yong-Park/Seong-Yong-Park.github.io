@@ -1,17 +1,30 @@
 ---
-layout: default
+layout: blog
 title: Blog
 ---
 
-<div class="blog-container">
+<div class="blog-container" data-lang="{{ site.lang | default: 'ko' }}">
+    <!-- Resume Navigation - 창의적인 연결 -->
+    <div class="resume-navigation-section">
+        <div class="resume-navigation-wrapper">
+            <div class="language-switcher blog-lang-switcher">
+                <button class="lang-btn" data-lang="ko" aria-label="한국어">한</button>
+                <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+            </div>
+            <a href="{{ '/' | relative_url }}" class="resume-navigation-link">
+                ← <span data-i18n="blog.back_to_resume">{{ site.data.translations[site.lang].blog.back_to_resume }}</span>
+            </a>
+        </div>
+    </div>
+
     <div class="blog-header">
-        <h1 class="blog-title">Blog</h1>
-        <p class="blog-description">카테고리별로 정리된 글들을 확인하세요.</p>
+        <h1 class="blog-title" data-i18n="blog.title">{{ site.data.translations[site.lang].blog.title }}</h1>
+        <p class="blog-description" data-i18n="blog.description">{{ site.data.translations[site.lang].blog.description }}</p>
     </div>
 
     <!-- Category Filter -->
     <div class="category-filter">
-        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn active" data-category="all" data-i18n="blog.all">{{ site.data.translations[site.lang].blog.all }}</button>
         {% assign categories = site.posts | map: 'categories' | flatten | uniq | sort %}
         {% for category in categories %}
         <button class="filter-btn" data-category="{{ category }}">{{ category }}</button>
@@ -32,14 +45,14 @@ title: Blog
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
             </h2>
             <p class="post-item-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-            <a href="{{ post.url | relative_url }}" class="post-item-link">Read more →</a>
+            <a href="{{ post.url | relative_url }}" class="post-item-link" data-i18n="blog.read_more">{{ site.data.translations[site.lang].blog.read_more }}</a>
         </article>
         {% endfor %}
     </div>
 
     {% if site.posts.size == 0 %}
     <div class="empty-state">
-        <p>아직 작성된 글이 없습니다.</p>
+        <p data-i18n="blog.no_posts">{{ site.data.translations[site.lang].blog.no_posts }}</p>
     </div>
     {% endif %}
 </div>

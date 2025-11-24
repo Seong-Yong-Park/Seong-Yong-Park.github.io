@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'ko' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon-32x32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon-16x16.png' | relative_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
+</head>
+<body data-lang="{{ site.lang | default: 'ko' }}" class="blog-page">
+    <main class="main-content blog-main">
+        {{ content }}
+    </main>
+    
+    <script>
+        // 다국어 지원 스크립트
+        (function() {
+            const translations = {{ site.data.translations | jsonify }};
+            const defaultLang = '{{ site.default_lang | default: "ko" }}';
+            let currentLang = localStorage.getItem('preferredLang') || defaultLang;
+            
+            // 언어 설정 함수
+            function setLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('preferredLang', lang);
+                document.documentElement.lang = lang;
+                document.body.setAttribute('data-lang', lang);
+                
+                // 모든 data-i18n 속성을 가진 요소 업데이트
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    const keys = key.split('.');
+                    let value = translations[lang];
+                    
+                    for (let k of keys) {
+                        value = value && value[k];
+                    }
+                    
+                    if (value) {
+                        // HTML 태그가 포함된 경우 innerHTML 사용, 그렇지 않으면 textContent 사용
+                        if (value.includes('<') && value.includes('>')) {
+                            element.innerHTML = value;
+                        } else {
+                            element.textContent = value;
+                        }
+                    }
+                });
+                
+                // 활성 언어 버튼 업데이트
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    if (btn.getAttribute('data-lang') === lang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+            
+            // 언어 버튼 이벤트 리스너
+            document.addEventListener('DOMContentLoaded', function() {
+                // 초기 언어 설정
+                setLanguage(currentLang);
+                
+                // 언어 버튼 클릭 이벤트
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const lang = this.getAttribute('data-lang');
+                        setLanguage(lang);
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
+
