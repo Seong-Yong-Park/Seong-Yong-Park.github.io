@@ -605,7 +605,7 @@ a:hover {
 }
 
 .resume-content .resume-section {
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: 0;
     padding-bottom: 0;
 }
 
@@ -649,7 +649,7 @@ a:hover {
 
 /* Resume Section */
 .resume-section {
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-md) 0;
 }
 
 .section-title {

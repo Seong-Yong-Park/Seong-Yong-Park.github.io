@@ -44,13 +44,64 @@ title: Resume
     <div class="resume-divider"></div>
 
     <div class="resume-content">
-        <!-- Professional Summary -->
+        <!-- Experience -->
         <section class="resume-section">
-            <h2 class="resume-section-title" data-i18n="resume.professional_summary">{{ site.data.translations[site.lang].resume.professional_summary }}</h2>
+            <h2 class="resume-section-title" data-i18n="resume.experience">{{ site.data.translations[site.lang].resume.experience }}</h2>
             <div class="resume-block">
-                <p class="resume-text" data-i18n="resume.professional_summary_text">
-                    {{ site.data.translations[site.lang].resume.professional_summary_text }}
-                </p>
+                <!-- First Experience - Continental -->
+                <div class="resume-item">
+                    <div class="resume-item-header">
+                        <h3 class="resume-item-title" data-i18n="resume.work_company1">{{ site.data.translations[site.lang].resume.work_company1 }}</h3>
+                        <span class="resume-item-date" data-i18n="resume.work_date1">{{ site.data.translations[site.lang].resume.work_date1 }}</span>
+                    </div>
+                    <p class="resume-item-description" data-i18n="resume.work_position1">{{ site.data.translations[site.lang].resume.work_position1 }}</p>
+                    <ul class="resume-item-list">
+                        <li data-i18n="resume.work_item1_1">{{ site.data.translations[site.lang].resume.work_item1_1 }}</li>
+                        <li data-i18n="resume.work_item1_2">{{ site.data.translations[site.lang].resume.work_item1_2 }}</li>
+                        <li data-i18n="resume.work_item1_3">{{ site.data.translations[site.lang].resume.work_item1_3 }}</li>
+                        <li data-i18n="resume.work_item1_4">{{ site.data.translations[site.lang].resume.work_item1_4 }}</li>
+                    </ul>
+                </div>
+                <!-- Second Experience - KIST -->
+                <div class="resume-item">
+                    <div class="resume-item-header">
+                        <h3 class="resume-item-title" data-i18n="resume.work_company2">{{ site.data.translations[site.lang].resume.work_company2 }}</h3>
+                        <span class="resume-item-date" data-i18n="resume.work_date2">{{ site.data.translations[site.lang].resume.work_date2 }}</span>
+                    </div>
+                    <p class="resume-item-description" data-i18n="resume.work_position2">{{ site.data.translations[site.lang].resume.work_position2 }}</p>
+                    <ul class="resume-item-list">
+                        <li data-i18n="resume.work_item2_1">{{ site.data.translations[site.lang].resume.work_item2_1 }}</li>
+                        <li data-i18n="resume.work_item2_2">{{ site.data.translations[site.lang].resume.work_item2_2 }}</li>
+                        <li data-i18n="resume.work_item2_3">{{ site.data.translations[site.lang].resume.work_item2_3 }}</li>
+                        <li data-i18n="resume.work_item2_4">{{ site.data.translations[site.lang].resume.work_item2_4 }}</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="resume-section">
+            <h2 class="resume-section-title" data-i18n="resume.education">{{ site.data.translations[site.lang].resume.education }}</h2>
+            <div class="resume-block">
+                <!-- First Education -->
+                <div class="resume-item">
+                    <div class="resume-item-header">
+                        <h3 class="resume-item-title" data-i18n="resume.education_title1">{{ site.data.translations[site.lang].resume.education_title1 }}</h3>
+                        <span class="resume-item-date" data-i18n="resume.education_date1">{{ site.data.translations[site.lang].resume.education_date1 }}</span>
+                    </div>
+                    <p class="resume-item-description" data-i18n="resume.education_degree1">{{ site.data.translations[site.lang].resume.education_degree1 }}</p>
+                    <ul class="resume-item-list">
+                        <li data-i18n="resume.education_activity1">{{ site.data.translations[site.lang].resume.education_activity1 }}</li>
+                    </ul>
+                </div>
+                <!-- Second Education -->
+                <div class="resume-item">
+                    <div class="resume-item-header">
+                        <h3 class="resume-item-title" data-i18n="resume.education_title2">{{ site.data.translations[site.lang].resume.education_title2 }}</h3>
+                        <span class="resume-item-date" data-i18n="resume.education_date2">{{ site.data.translations[site.lang].resume.education_date2 }}</span>
+                    </div>
+                    <p class="resume-item-description" data-i18n="resume.education_degree2">{{ site.data.translations[site.lang].resume.education_degree2 | raw }}</p>
+                </div>
             </div>
         </section>
 
@@ -71,45 +122,56 @@ title: Resume
             </div>
         </section>
 
-        <!-- Work History -->
+        <!-- Other -->
         <section class="resume-section">
-            <h2 class="resume-section-title" data-i18n="resume.work_history">{{ site.data.translations[site.lang].resume.work_history }}</h2>
+            <h2 class="resume-section-title" data-i18n="resume.other">{{ site.data.translations[site.lang].resume.other }}</h2>
             <div class="resume-block">
+                <!-- Certifications & Courses -->
                 <div class="resume-item">
-                    <div class="resume-item-header">
-                        <h3 class="resume-item-title" data-i18n="resume.work_title">{{ site.data.translations[site.lang].resume.work_title }}</h3>
-                        <span class="resume-item-date" data-i18n="resume.work_date">{{ site.data.translations[site.lang].resume.work_date }}</span>
-                    </div>
-                    <p class="resume-item-description" data-i18n="resume.work_description">{{ site.data.translations[site.lang].resume.work_description }}</p>
+                    <h3 class="resume-item-title" data-i18n="resume.certifications_courses">{{ site.data.translations[site.lang].resume.certifications_courses }}</h3>
                     <ul class="resume-item-list">
-                        <li data-i18n="resume.work_item1">{{ site.data.translations[site.lang].resume.work_item1 }}</li>
-                        <li data-i18n="resume.work_item2">{{ site.data.translations[site.lang].resume.work_item2 }}</li>
-                        <li data-i18n="resume.work_item3">{{ site.data.translations[site.lang].resume.work_item3 }}</li>
+                        <li>
+                            <strong data-i18n="resume.cert1_title">{{ site.data.translations[site.lang].resume.cert1_title }}</strong>
+                            <span data-i18n="resume.cert1_org"> • {{ site.data.translations[site.lang].resume.cert1_org }}</span>
+                            <span data-i18n="resume.cert1_date"> • {{ site.data.translations[site.lang].resume.cert1_date }}</span>
+                        </li>
+                        <li>
+                            <strong data-i18n="resume.cert2_title">{{ site.data.translations[site.lang].resume.cert2_title }}</strong>
+                            <span data-i18n="resume.cert2_org"> • {{ site.data.translations[site.lang].resume.cert2_org }}</span>
+                            <span data-i18n="resume.cert2_date"> • {{ site.data.translations[site.lang].resume.cert2_date }}</span>
+                        </li>
+                        <li>
+                            <strong data-i18n="resume.cert3_title">{{ site.data.translations[site.lang].resume.cert3_title }}</strong>
+                            <span data-i18n="resume.cert3_org"> • {{ site.data.translations[site.lang].resume.cert3_org }}</span>
+                            <span data-i18n="resume.cert3_date"> • {{ site.data.translations[site.lang].resume.cert3_date }}</span>
+                        </li>
+                        <li>
+                            <strong data-i18n="resume.cert4_title">{{ site.data.translations[site.lang].resume.cert4_title }}</strong>
+                            <span data-i18n="resume.cert4_org"> • {{ site.data.translations[site.lang].resume.cert4_org }}</span>
+                            <span data-i18n="resume.cert4_date"> • {{ site.data.translations[site.lang].resume.cert4_date }}</span>
+                        </li>
+                        <li>
+                            <strong data-i18n="resume.cert5_title">{{ site.data.translations[site.lang].resume.cert5_title }}</strong>
+                            <span data-i18n="resume.cert5_org"> • {{ site.data.translations[site.lang].resume.cert5_org }}</span>
+                            <span data-i18n="resume.cert5_date"> • {{ site.data.translations[site.lang].resume.cert5_date }}</span>
+                        </li>
                     </ul>
                 </div>
-                <!-- 추가 경력 항목을 여기에 추가하세요 -->
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section class="resume-section">
-            <h2 class="resume-section-title" data-i18n="resume.education">{{ site.data.translations[site.lang].resume.education }}</h2>
-            <div class="resume-block">
-                <!-- First Education -->
+                <!-- Languages -->
                 <div class="resume-item">
-                    <div class="resume-item-header">
-                        <h3 class="resume-item-title" data-i18n="resume.education_title1">{{ site.data.translations[site.lang].resume.education_title1 }}</h3>
-                        <span class="resume-item-date" data-i18n="resume.education_date1">{{ site.data.translations[site.lang].resume.education_date1 }}</span>
-                    </div>
-                    <p class="resume-item-description" data-i18n="resume.education_degree1">{{ site.data.translations[site.lang].resume.education_degree1 }}</p>
-                </div>
-                <!-- Second Education -->
-                <div class="resume-item">
-                    <div class="resume-item-header">
-                        <h3 class="resume-item-title" data-i18n="resume.education_title2">{{ site.data.translations[site.lang].resume.education_title2 }}</h3>
-                        <span class="resume-item-date" data-i18n="resume.education_date2">{{ site.data.translations[site.lang].resume.education_date2 }}</span>
-                    </div>
-                    <p class="resume-item-description" data-i18n="resume.education_degree2">{{ site.data.translations[site.lang].resume.education_degree2 }}</p>
+                    <h3 class="resume-item-title" data-i18n="resume.test_scores">{{ site.data.translations[site.lang].resume.test_scores }}</h3>
+                    <ul class="resume-item-list">
+                        <li>
+                            <strong data-i18n="resume.opic_title">{{ site.data.translations[site.lang].resume.opic_title }}</strong>
+                            <span data-i18n="resume.opic_score"> • {{ site.data.translations[site.lang].resume.opic_score }}</span>
+                            <span data-i18n="resume.opic_date"> • {{ site.data.translations[site.lang].resume.opic_date }}</span>
+                        </li>
+                        <li>
+                            <strong data-i18n="resume.hsk_title">{{ site.data.translations[site.lang].resume.hsk_title }}</strong>
+                            <span data-i18n="resume.hsk_score"> • {{ site.data.translations[site.lang].resume.hsk_score }}</span>
+                            <span data-i18n="resume.hsk_date"> • {{ site.data.translations[site.lang].resume.hsk_date }}</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -182,7 +244,7 @@ function exportToPDF() {
             }
             .resume-content .resume-section {
                 page-break-inside: avoid;
-                margin-bottom: 1.5rem;
+                margin-bottom: 0.75rem;
             }
             .resume-item {
                 page-break-inside: avoid;
